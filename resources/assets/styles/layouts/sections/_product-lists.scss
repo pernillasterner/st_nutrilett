@@ -1,0 +1,114 @@
+.section-product-lists {
+  .product-lists {
+    font-size: 0;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: -30px;
+
+    &.js-product-carousel {
+      @include media-breakpoint-down(xs) {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .carousel-cell {
+        @include media-breakpoint-down(sm) {
+          width: 302px;
+        }
+
+        &:first-child {
+          @include media-breakpoint-down(xs) {
+            padding-left: 20px;
+            width: 312px;
+          }
+        }
+
+        &:last-child {
+          @include media-breakpoint-down(xs) {
+            padding-right: 20px;
+            width: 312px;
+          }
+        }
+
+        .sale {
+          @include media-breakpoint-down(xs) {
+            top: 15px;
+            right: 15px;
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: -60px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      margin-left: -25px;
+      margin-right: -25px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      margin-left: -25px;
+      margin-right: -25px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      margin-left: -20px;
+      margin-right: -20px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .product-lists-item {
+      display: inline-block;
+      padding: 0 10px;
+      width: 100%;
+      vertical-align: text-top;
+
+      @include media-breakpoint-up(sm) {
+        width: calc(100% / 2);
+      }
+
+      @include media-breakpoint-up(lg) {
+        width: calc(100% / 3);
+      }
+
+      @include media-breakpoint-up(xl) {
+        width: calc(100% / 4);
+      }
+
+      @include media-breakpoint-up(xxl) {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+      &.is-bundle {
+        @include media-breakpoint-up(lg) {
+          width: calc(100% / 2);
+        }
+
+        @include media-breakpoint-up(xl) {
+          width: calc(100% / 2);
+        }
+
+        @include media-breakpoint-up(xxl) {
+          padding-left: 25px;
+          padding-right: 25px;
+        }
+      }
+    }
+  }
+
+  .load-more {
+    position: relative;
+    margin-top: 60px;
+
+    .spinner-border {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}

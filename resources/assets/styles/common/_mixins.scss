@@ -1,0 +1,478 @@
+// Mixins
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    display: block;
+    content: " ";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+
+  > img,
+  > video,
+  > figure,
+  > .ratio-content {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+    right: -9999px;
+    bottom: 0;
+    min-height: 100%;
+    min-width: 100%;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    object-fit: cover;
+  }
+
+  > iframe,
+  > .ratio-iframe {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+    right: -9999px;
+    bottom: 0;
+    min-height: 100%;
+    min-width: 100%;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+  }
+
+  > iframe {
+    min-height: 200%;
+    min-width: 200%;
+  }
+}
+
+@mixin relate-aspect-ratio {
+  position: relative;
+  overflow: hidden;
+
+  > img,
+  > video,
+  > figure,
+  > .ratio-content {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+    right: -9999px;
+    bottom: 0;
+    min-height: 100%;
+    min-width: 100%;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    object-fit: cover;
+  }
+
+  > iframe,
+  > .ratio-iframe {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+    right: -9999px;
+    bottom: 0;
+    min-height: 100%;
+    min-width: 100%;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+  }
+
+  > iframe {
+    min-height: 200%;
+    min-width: 200%;
+  }
+}
+
+@mixin aspect-ratio-fullwidth($width, $height, $heightType) {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  @if $heightType=="min-height" {
+    min-height: calc(100vw * (#{$width} / #{$height}));
+  }
+
+  @else if $heightType=="height" {
+    height: calc(100vw * (#{$width} / #{$height}));
+  }
+
+  > img,
+  > video,
+  > figure {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+    right: -9999px;
+    bottom: 0;
+    min-height: 100%;
+    min-width: 100%;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    object-fit: cover;
+  }
+
+  > iframe {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+    right: -9999px;
+    bottom: 0;
+    min-height: 100%;
+    min-width: 100%;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+  }
+}
+
+// Define vertical, horizontal, or both position
+@mixin center($position) {
+  position: absolute;
+
+  @if $position=="vertical" {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+  }
+
+  @else if $position=="horizontal" {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  }
+
+  @else if $position=="both" {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  @else if $position=="reset" {
+    top: auto;
+    left: auto;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}
+
+//add ellipsis
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//mixins for font calculation
+@mixin calcRem($size) {
+  font-size: ($size / 16px) * 1rem;
+}
+
+@mixin background-gradient($start-color, $end-color, $orientation) {
+  background: $start-color;
+
+  @if $orientation=="vertical" {
+    background: -webkit-linear-gradient(top, $start-color, $end-color);
+    background: linear-gradient(to bottom, $start-color, $end-color);
+  }
+
+  @else if $orientation=="horizontal" {
+    background: -webkit-linear-gradient(left, $start-color, $end-color);
+    background: linear-gradient(to right, $start-color, $end-color);
+  }
+
+  @else {
+    background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+    background: radial-gradient(ellipse at center, $start-color, $end-color);
+  }
+}
+
+// fullscreen cover
+@mixin cover {
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+//box-shadow
+@mixin box-shadow($top, $left, $blur, $spread, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $top $left $blur $spread $color;
+    -moz-box-shadow: inset $top $left $blur $spread $color;
+    box-shadow: inset $top $left $blur $spread $color;
+  }
+
+  @else {
+    -webkit-box-shadow: $top $left $spread $blur $color;
+    -moz-box-shadow: $top $left $spread $blur $color;
+    box-shadow: $top $left $blur $spread $color;
+  }
+}
+
+// border radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// transition
+@mixin transition($param) {
+  -webkit-transition: #{$param};
+  -moz-transition: #{$param};
+  -o-transition: #{$param};
+  transition: #{$param};
+}
+
+//transform
+@mixin transform($attr) {
+  -ms-transform: $attr; // IE 9
+  -webkit-transform: $attr; // Chrome, Safari, Opera
+  transform: $attr;
+}
+
+// Filter
+@mixin filter($attr) {
+  filter: $attr;
+  -webkit-filter: $attr;
+  -moz-filter: $attr;
+  -o-filter: $attr;
+  -ms-filter: $attr;
+}
+
+// Animation
+@mixin animation($attr) {
+  -webkit-animation: $attr;
+  -moz-animation: $attr;
+  -o-animation: $attr;
+  animation: $attr;
+}
+
+//Keyframe
+@mixin keyframes($name) {
+  @-webkit-keyframes $name {
+    @content;
+  }
+
+  @-moz-keyframes $name {
+    @content;
+  }
+
+  @-o-keyframes $name {
+    @content;
+  }
+
+  @keyframes $name {
+    @content;
+  }
+}
+
+/* box shadow */
+@mixin box-shadow ($bs) {
+  -webkit-box-shadow: $bs;
+  -moz-box-shadow: $bs;
+  box-shadow: $bs;
+}
+
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin user-select ($us) {
+  -webkit-user-select: $us;
+  -moz-user-select: $us;
+  -ms-user-select: $us;
+}
+
+@mixin box-sizing ($bs) {
+  -webkit-box-sizing: $bs;
+  -moz-box-sizing: $bs;
+  box-sizing: $bs;
+}
+
+@mixin appearance ($ap) {
+  -webkit-appearance: $ap;
+  -moz-appearance: $ap;
+  appearance: $ap;
+}
+
+@mixin line-clamp($lineHeight: 1.2, $numLines: 1, $unit: "em") {
+  overflow: hidden;
+  text-overflow: -o-ellipsis-lastline;
+  text-overflow: ellipsis;
+  line-height: $lineHeight + unquote($unit);
+  display: block;
+
+  /*! autoprefixer: off */
+  display: -webkit-box;
+  -webkit-line-clamp: $numLines;
+  -webkit-box-orient: vertical;
+  max-height: $numLines * $lineHeight + unquote($unit);
+
+  /*! autoprefixer: on */
+}
+
+@mixin display-flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin align-items($ap: center) {
+  -webkit-box-align: $ap;
+  -moz-box-align: $ap;
+  -ms-flex-align: $ap;
+  -webkit-align-items: $ap;
+  align-items: $ap;
+}
+
+@mixin flex($fl: 1) {
+  -webkit-flex: $fl;
+  -ms-flex: $fl;
+  flex: $fl;
+}
+
+/***************************************************************
+* Media Queries
+***************************************************************/
+@mixin media-min($min) {
+  @media screen and (min-width: #{ $min }) {
+    @content;
+  }
+}
+
+// parameter example: $screen-xs-min, $screen-xs-max
+@mixin media-between($min, $max) {
+  @media screen and (min-width: #{$min}) and (max-width: #{$max}) {
+    @content;
+  }
+}
+
+// parameter example: $screen-xs
+@mixin media-max($max) {
+  @media screen and (max-width: #{$max}) {
+    @content;
+  }
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1==$u2 and $u1==$u3 and $u1==$u4 {
+    & {
+      font-size: $min-font-size;
+
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+// Hamburger Menu for Mobile
+@mixin hamburger($width, $height) {
+  cursor: pointer;
+  display: block;
+  height: $height;
+  position: relative;
+  width: $width;
+
+  span {
+    background-color: $orange;
+    display: block;
+    height: 0.125rem;
+    left: calc(50% - 14px);
+    position: absolute;
+    transform-origin: center;
+    transition-duration: 0.5ms;
+    transition-property: background-color, opacity, transform;
+    transition-timing-function: ease-out;
+    width: 28px;
+
+    &:nth-child(1) {
+      top: 0;
+    }
+
+    &:nth-child(2) {
+      top: calc(50% - 1px);
+    }
+
+    &:nth-child(3) {
+      top: calc(50% + 8px);
+    }
+  }
+
+  &:hover {
+    background-color: rgba(black, 0.05);
+  }
+
+  // Modifers
+  &[aria-expanded=true] {
+    span {
+      &:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+    }
+  }
+}
+
+@mixin oneline-flex($fg, $fs, $fb) {
+  -webkit-box-flex: $fg;
+  -ms-flex-positive: $fg;
+  flex-grow: $fg;
+  -ms-flex-negative: $fs;
+  flex-shrink: $fs;
+  -ms-flex-preferred-size: $fb;
+  flex-basis: $fb;
+}
+
+// this will target IE 10 and 11 only
+@mixin target-ie {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}

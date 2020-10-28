@@ -1,0 +1,42 @@
+.icon-lists {
+  em {
+    color: color("green-mid");
+  }
+}
+
+svg {
+  width: 28px;
+  height: 28px;
+  stroke: $primary;
+  fill: transparent;
+  stroke-width: 1.5px;
+}
+
+.icon-fill {
+  svg {
+    stroke: $primary;
+    fill: $primary;
+  }
+
+  &.no-stroke {
+    svg {
+      stroke-width: 0;
+    }
+  }
+}
+
+.fill-stroke {
+  svg {
+    stroke-width: 0;
+  }
+
+  .has-fill {
+    stroke-width: 0;
+    fill: $primary;
+  }
+
+  .has-stroke {
+    stroke: $primary;
+    fill: transparent;
+  }
+}

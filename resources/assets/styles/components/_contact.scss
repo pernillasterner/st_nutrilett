@@ -1,0 +1,117 @@
+.section-contact {
+  display: none;
+
+  br {
+    display: none;
+  }
+
+  .wpcf7-form-control {
+    &::placeholder {
+      color: $body-color;
+      opacity: 0.6;
+      letter-spacing: 0.005em;
+    }
+
+    &:-ms-input-placeholder {
+      color: $body-color;
+      opacity: 0.6;
+      letter-spacing: 0.005em;
+    }
+
+    &::-ms-input-placeholder {
+      color: $body-color;
+      opacity: 0.6;
+      letter-spacing: 0.005em;
+    }
+  }
+
+  .title {
+    margin-bottom: 10px;
+
+    small {
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: $body-color;
+      font-weight: 600;
+    }
+  }
+
+  form {
+    // margin-top: 40px;
+  }
+
+  .wpcf7-form {
+    label {
+      letter-spacing: 1px;
+      color: $body-color;
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: block;
+
+      &.invisible {
+        @include media-breakpoint-down(sm) {
+          display: none !important;
+        }
+      }
+    }
+
+    .big-label {
+      font-size: 1.8rem;
+    }
+
+    .small-label {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+    }
+
+    .form-two-label {
+      margin-top: 67px;
+
+      @include media-breakpoint-down(sm) {
+        margin-top: 0;
+      }
+    }
+
+    select {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600 !important;
+      cursor: pointer;
+    }
+
+    .input-file-container {
+      position: relative;
+    }
+
+    .input-file-trigger {
+      display: inline-block !important;
+      height: 40px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 1.4rem;
+      border: 1.5px solid $primary;
+      text-transform: uppercase;
+      padding: 6px 20px;
+    }
+
+    .contact-file {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: auto;
+      opacity: 0;
+      padding: 14px 0;
+      cursor: pointer;
+    }
+
+    .file-list-wrapper {
+      .file-list {
+        padding-left: 15px;
+      }
+
+      p:empty {
+        display: none;
+      }
+    }
+  }
+}

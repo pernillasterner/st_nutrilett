@@ -1,0 +1,103 @@
+.section-faq-module {
+  .content-info {
+    .headtext {
+      color: $primary;
+      margin-bottom: 2rem;
+
+      @include media-breakpoint-up(md) {
+        margin-bottom: 5rem;
+      }
+    }
+
+    .accordion.panel {
+      @include media-breakpoint-down(md) {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  .row {
+    .is-column {
+      @include media-breakpoint-down(md) {
+        padding-bottom: 3rem;
+        padding-top: 3rem;
+
+        .link-text {
+          color: $body-color;
+        }
+      }
+    }
+  }
+}
+
+.section-faq {
+  .accordion {
+    .card {
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 1px solid rgba($primary, 0.5) !important;
+      border-top: 0;
+      background-color: transparent;
+      border-radius: 0;
+
+      &:first-of-type {
+        border-top: 1px solid rgba($primary, 0.5) !important;
+      }
+    }
+
+    .card-title {
+      width: 100%;
+      text-transform: initial;
+      color: $body-color;
+      font-weight: 500;
+    }
+
+    .card-header {
+      margin-bottom: 0;
+      border-bottom: none;
+      border-radius: 0;
+      cursor: pointer;
+      padding: 2rem 4rem 2rem 1rem;
+      background-color: transparent;
+    }
+
+    .editor-output {
+      @include media-breakpoint-up(lg) {
+        padding: 0 3rem 0 4rem;
+      }
+    }
+
+    .plus-minus-toggle {
+      cursor: pointer;
+      position: absolute;
+      right: 30px;
+      top: 33px;
+
+      &:before,
+      &:after {
+        background: $black;
+        content: "";
+        height: 2px;
+        width: 14px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform 500ms ease;
+      }
+
+      &:after {
+        transform-origin: center;
+      }
+    }
+
+    .collapsed .plus-minus-toggle {
+      &:after {
+        transform: rotate(90deg);
+      }
+
+      &:before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

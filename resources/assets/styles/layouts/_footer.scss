@@ -1,0 +1,176 @@
+footer {
+  .lpt-eventFeedbackStatic-form1 {
+
+    >.wrapperContainer:nth-of-type(2),
+    >.wrapperContainer:nth-of-type(3) {
+      display: none;
+    }
+
+    >.wrapperContainer:nth-of-type(1) {
+      > .wrapperContainer.rightcolumn {
+        display: none;
+      }
+    }
+    [data-editorblocktype="SubmitButtonBlock"] {
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  &.footer-info {
+    background-color: $primary;
+    color: $white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    @include media-breakpoint-up(md) {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    .wpcf7-form {
+      .input-group {
+        margin-bottom: 1rem;
+
+        @include media-breakpoint-up(sm) {
+          max-width: 420px;
+        }
+
+        @include media-breakpoint-up(xl) {
+          max-width: 504px;
+        }
+
+        br {
+          display: none;
+        }
+
+        .input-group-append {
+          position: relative;
+
+          .ajax-loader {
+            position: absolute;
+            z-index: 2;
+            right: 7px;
+            top: 18px;
+          }
+        }
+
+        .wpcf7-form-control:not(.wpcf7-submit) {
+          color: $white;
+          background-color: transparent;
+          border-color: $white;
+
+          &::placeholder {
+            color: $white;
+          }
+
+          &:focus,
+          &.focus,
+          &:active {
+            background-color: transparent;
+            border-color: $white;
+            color: $white;
+          }
+        }
+
+        .wpcf7-submit {
+          background-color: $white;
+          border: $input-btn-border-width solid $white;
+          color: $body-color;
+
+          &::placeholder {
+            color: $body-color;
+          }
+
+          &:hover,
+          &:focus,
+          &.focus {
+            color: $white;
+            background-color: $primary;
+            border: $input-btn-border-width solid $white;
+          }
+        }
+      }
+    }
+
+    .link-text.is-small.has-icon.is-white {
+      @include media-breakpoint-down(xs) {
+        font-size: 12px;
+      }
+    }
+
+    .form-title,
+    .menu-title {
+      margin-bottom: 10px;
+    }
+
+    .form-title {
+      color: $secondary;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1px;
+
+      @include media-breakpoint-up(md) {
+        margin-bottom: 20px;
+      }
+    }
+
+    .menu-title {
+      a {
+        color: $secondary;
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &.focus {
+          color: $white;
+        }
+      }
+    }
+
+    .menu-list {
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      li {
+        margin-bottom: 3px;
+      }
+
+      a {
+        color: $white;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1px;
+
+        &:hover,
+        &:focus,
+        &.focus {
+          color: $secondary;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .footer-logo {
+      margin-top: 60px;
+      display: inline-block;
+
+      @include media-breakpoint-up(md) {
+        margin-top: 30px;
+      }
+    }
+
+    .row-indentifier {
+      .col {
+        @include media-breakpoint-up(md) {
+          max-width: 50%;
+        }
+      }
+    }
+  }
+}

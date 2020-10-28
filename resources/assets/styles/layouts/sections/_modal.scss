@@ -1,0 +1,140 @@
+.modal {
+  display: none;
+
+  &-dialog {
+    max-width: none;
+  }
+
+  &-content {
+    background-color: transparent;
+    border: none;
+  }
+
+  &-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    cursor: pointer;
+
+    svg {
+      stroke: $white;
+    }
+  }
+
+  &.newsletter-popup {
+    padding-right: 0 !important;
+
+    @include media-breakpoint-down(lg) {
+      display: none !important;
+    }
+  }
+
+  &.product-status {
+    @include media-breakpoint-down(md) {
+      padding-right: 0;
+    }
+
+    .modal-body {
+      @include media-breakpoint-down(md) {
+        background-color: $white;
+      }
+    }
+
+    .modal-dialog {
+      @include media-breakpoint-down(md) {
+        margin: 0;
+      }
+    }
+
+    .modal-content {
+      @include media-breakpoint-down(md) {
+        position: absolute;
+        top: 0;
+      }
+    }
+
+    .product-status-container {
+      max-width: 628px;
+      min-height: 250px;
+      width: 100%;
+      background-color: $white;
+      margin: 0 auto;
+      padding: 25px 50px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      position: relative;
+
+      @include media-breakpoint-down(md) {
+        max-width: 100%;
+        top: 0;
+        min-height: 110px;
+        padding: 25px;
+      }
+
+      .modal-close {
+        top: 20px;
+        right: 20px;
+        display: flex;
+
+        @include media-breakpoint-down(md) {
+          top: 0;
+          right: 3px;
+        }
+
+        &:hover {
+          opacity: 0.5;
+        }
+
+        svg {
+          stroke: $green-500;
+          width: 25px;
+          height: 25px;
+          stroke-width: 0.7;
+
+          @include media-breakpoint-down(md) {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+      img {
+        margin-right: 30px;
+        display: none;
+      }
+
+      .product-content {
+        p {
+          display: none;
+        }
+      }
+
+
+      &.success {
+        .product-status-icon-success {
+          display: block;
+        }
+
+        .product-content {
+          p.p-success {
+            display: block;
+          }
+        }
+      }
+
+      &.error {
+        .product-status-icon-error {
+          display: block;
+        }
+
+        .product-content {
+          p.p-error {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

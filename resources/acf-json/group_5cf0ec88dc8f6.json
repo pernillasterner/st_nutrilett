@@ -1,0 +1,115 @@
+{
+    "key": "group_5cf0ec88dc8f6",
+    "title": "Section part: Text with button",
+    "fields": [
+        {
+            "key": "field_5cf0ef8a09800",
+            "label": "Section title",
+            "name": "section_title",
+            "type": "text",
+            "instructions": "This field is used as the section's label.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5cf10511a1fc0",
+            "label": "Show section title?",
+            "name": "show_section_title",
+            "type": "true_false",
+            "instructions": "Determines if the section title is shown in the front end.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5cf1058c009f2",
+            "label": "Preamble",
+            "name": "preamble",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_5cf10772100ac",
+            "label": "Content",
+            "name": "content",
+            "type": "wysiwyg",
+            "instructions": "Recommended image width: <br\/>\r\n800px or above <br\/><br\/>\r\n<strong>Note:<\/strong><br\/>\r\n1. You can use \"Formats > Indent\" from the toolbar to indent a paragraph. <br\/>\r\n2. Make sure that the image display setting is set to \"Full size\" to avoid cropping of the added image. <br\/>\r\n3. You can use [size_guide] shortcode to display the size guide chart in the content.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5cf10784100ad",
+            "label": "Link",
+            "name": "link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 0,
+    "description": "",
+    "modified": 1560520959
+}

@@ -1,0 +1,236 @@
+html {
+  font-size: 62.5%;
+  font-feature-settings: "pnum"on, "lnum"on, "case"on, "ordn"on, "ss03"on;
+}
+
+body {
+  @include font-smoothing;
+
+  @include media-breakpoint-down(xs) {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  letter-spacing: -0.03em;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 15px;
+    // letter-spacing: 1px;
+  }
+}
+
+p+h1,
+p+h2,
+p+h3,
+p+h4,
+p+h5,
+p+h6,
+p+.h1,
+p+.h2,
+p+.h3,
+p+.h4,
+p+.h5,
+p+.h6 {
+  margin-top: 20px;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 40px;
+  }
+}
+
+.h1,
+h1 {
+  $min_font: 32px;
+  $max_font: 42px;
+
+  @include fluid-type($font_min_width, $font_max_width, $min_font, $max_font);
+}
+
+.h2,
+h2 {
+  $min_font: 26px;
+  $max_font: 32px;
+
+  @include fluid-type($font_min_width, $font_max_width, $min_font, $max_font);
+}
+
+.h3,
+h3 {
+  $min_font: 22px;
+  $max_font: 27px;
+
+  @include fluid-type($font_min_width, $font_max_width, $min_font, $max_font);
+}
+
+.h4,
+h4 {
+  $min_font: 18px;
+  $max_font: 24px;
+
+  @include fluid-type($font_min_width, $font_max_width, $min_font, $max_font);
+}
+
+.h5,
+h5 {
+  $min_font: 17px;
+  $max_font: 18px;
+
+  @include fluid-type($font_min_width, $font_max_width, $min_font, $max_font);
+}
+
+.h6,
+h6 {
+  $min_font: 16px;
+  $max_font: 17px;
+
+  @include fluid-type($font_min_width, $font_max_width, $min_font, $max_font);
+}
+
+.hero-title {
+  $min_font: 38px;
+  $max_font: 62px;
+
+  font-weight: $font-weight-base;
+  line-height: 1.375;
+
+  @include fluid-type($font_min_width, $font_max_width, $min_font, $max_font);
+}
+
+.section-title {
+  $min_font: 22px;
+  $max_font: 32px;
+
+  font-weight: $headings-font-weight;
+
+  @include fluid-type($font_min_width, $font_max_width, $min_font, $max_font);
+}
+
+p {
+  letter-spacing: -0.03em;
+  margin: 0 0 25px;
+}
+
+.lead {
+  margin-bottom: 25px;
+
+  @include media-breakpoint-down(xs) {
+    font-size: 22px;
+    line-height: 1.59091;
+  }
+}
+
+small,
+.small {
+  font-size: 12px;
+  line-height: 1.75;
+  letter-spacing: 1px;
+
+  @include media-breakpoint-up(md) {
+    font-size: 14px;
+    line-height: 1.785;
+    letter-spacing: 0.005em;
+  }
+}
+
+.smaller {
+  font-size: 10px;
+  line-height: 1.6;
+  letter-spacing: 1px;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: $headings-font-weight;
+}
+
+a {
+  text-decoration: none;
+
+  @include transition(all 0.3s ease);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+a,
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+a[href^="tel"] {
+  color: inherit;
+  text-decoration: none;
+}
+
+.address-sidebar .info,
+.editor-output {
+  a {
+    color: color("green-mid");
+  }
+
+  a[href^="tel:"] {
+    color: color("green-mid");
+  }
+
+  iframe {
+    width: 100%;
+    height: 292px;
+
+    @include media-breakpoint-up(sm) {
+      height: 392px;
+    }
+
+    @include media-breakpoint-up(md) {
+      height: 348px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      height: 432px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      height: 460px;
+    }
+
+    &[name="KontaktOss"] {
+      height: 1570px;
+
+      @include media-breakpoint-up(sm) {
+        height: 1470px;
+      }
+
+      @include media-breakpoint-up(md) {
+        height: 1470px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        height: 1470px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        height: 1470px;
+      }
+    }
+  }
+}

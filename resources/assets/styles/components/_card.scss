@@ -1,0 +1,147 @@
+.card-block {
+  position: relative;
+  margin-bottom: 40px;
+  width: 100%;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 60px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .card-info {
+    .link-text.has-icon {
+      &::after {
+        margin-top: -3px;
+      }
+    }
+
+    h3 {
+      @include transition(all 0.3s ease);
+    }
+
+    .image {
+      .img-card {
+        @include transition(all 0.5s ease);
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &.focus {
+      .image {
+        .img-card {
+          @include media-breakpoint-up(md) {
+            opacity: 0.8;
+          }
+        }
+      }
+
+      .h3 {
+        color: $hover-color;
+      }
+
+      .link-text.has-icon {
+        &::after {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  .category {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    background-color: $white;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 2;
+
+    @include border-radius(28px);
+    @include transition(all 0.5s ease);
+
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+
+  .h3 {
+    $min_font: 22px;
+    $max_font: 27px;
+
+    @include fluid-type($font_min_width, $font_max_width, $min_font, $max_font);
+    @include transition(all 0.5s ease);
+
+    color: $body-color;
+    margin-bottom: 15px;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 10px;
+    }
+  }
+
+  .image {
+    position: relative;
+    margin-bottom: 15px;
+    background-color: color("card-color-mobile");
+
+    @include border-radius(2px);
+    @include aspect-ratio(4,3);
+
+    // @include media-breakpoint-up(md) {
+    //   margin-bottom: 18px;
+    // }
+
+    // &.is-big {
+    //   @include aspect-ratio(394, 524);
+    // }
+
+    // &.is-small {
+    //   @include aspect-ratio(394, 294);
+    // }
+
+    // .img-card {
+    //   width: 100%;
+    //   height: auto;
+
+    //   @include transition(all 0.5s ease);
+    // }
+
+    .img-card {
+      width: 100%;
+      height: auto;
+    }
+
+    // .wp-post-image,
+    .lazy.loaded {
+      width: 100%;
+      height: auto;
+    }
+
+    .wp-post-image {
+      width: 100%;
+      height: auto;
+    }
+
+    &.no-image {
+      @include aspect-ratio(394, 294);
+    }
+  }
+
+  .link-text.has-icon {
+    letter-spacing: 0.005em;
+    text-transform: none;
+    font-weight: 400;
+    color: $body-color;
+  }
+}

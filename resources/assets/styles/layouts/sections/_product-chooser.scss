@@ -1,0 +1,134 @@
+.section-product-chooser {
+  .product-text {
+    padding-top: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 18px;
+
+    @include media-breakpoint-up(lg) {
+      padding: 50px;
+    }
+
+    .h1 {
+      @include media-breakpoint-down(md) {
+        font-size: 26px;
+      }
+    }
+
+    .sub-text {
+      opacity: 0.6;
+    }
+  }
+
+  .product-questions {
+    padding: 20px;
+
+    @include media-breakpoint-up(lg) {
+      padding: 50px;
+    }
+
+    .question-counter {
+      @include media-breakpoint-down(md) {
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+    }
+
+    .question-item {
+      display: none;
+      transition: all 3s ease;
+      animation: fadeIn 3s;
+    }
+
+    .lead {
+      @include media-breakpoint-down(md) {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .custom-control {
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      padding-left: 5rem;
+      transition: all 0.5s ease;
+
+      @include media-breakpoint-up(lg) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+
+      &:hover {
+        background-color: $body-bg;
+        transition: all 0.5s ease;
+      }
+
+      @include media-breakpoint-down(md) {
+        min-height: 50px;
+        padding-left: 4rem;
+      }
+
+      &-label {
+        cursor: pointer;
+      }
+
+      &.active {
+        background: $body-bg;
+      }
+    }
+
+    .questions-buttons {
+      margin-top: 48px;
+      display: flex;
+      justify-content: space-between;
+
+      // @include media-breakpoint-up(md) {
+      //   flex-direction: column;
+      // }
+
+      // @include media-breakpoint-up(lg) {
+      //   flex-direction: row;
+      // }
+
+      @include media-breakpoint-down(md) {
+        margin-top: 30px;
+      }
+
+      .left-icon {
+        border: none;
+      }
+
+      .next-question {
+        margin-left: auto;
+      }
+    }
+  }
+
+  .custom-radio .custom-control-label::after,
+  .custom-radio .custom-control-label::before {
+    @include media-breakpoint-down(md) {
+      top: 4px !important;
+    }
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

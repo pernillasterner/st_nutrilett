@@ -1,0 +1,176 @@
+.section-fifty-fifty {
+  figure {
+    margin: 0;
+    height: 100%;
+
+    @include aspect-ratio(16, 9);
+
+    @include media-breakpoint-up(lg) {
+      top: 50%;
+      transform: translateY(-50%);
+
+      @include aspect-ratio(1, 1);
+    }
+
+    > iframe {
+      min-height: 150%;
+      min-width: 150%;
+    }
+  }
+
+  .row {
+    @include media-breakpoint-down(xs) {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+
+    .content-info {
+      @include media-breakpoint-down(xs) {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+      }
+    }
+  }
+
+  .is-column {
+    &:last-child {
+      @include media-breakpoint-down(xs) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+
+  &.section-willpower {
+    .is-column {
+      &:last-child {
+        @include media-breakpoint-down(xs) {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+    }
+
+    .row {
+      @include media-breakpoint-down(xs) {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+    }
+
+    .content-info {
+      @include media-breakpoint-down(xs) {
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+      }
+
+      .headtext {
+        color: $primary;
+        margin-bottom: 2rem;
+      }
+
+      .identifier {
+        height: 100%;
+
+        & > .wpcf7 {
+          height: 100%;
+
+          & > form:not(.sent) {
+            height: 100%;
+
+            .msie & {
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+
+    .willpower-group {
+      display: flex;
+      flex-direction: column;
+
+      @include media-breakpoint-up(lg) {
+        height: 100%;
+      }
+
+      .input-group {
+        margin-bottom: 1rem;
+        color: $primary;
+
+        @include media-breakpoint-up(lg) {
+          max-width: 412px;
+        }
+
+        .wpcf7-list-item-label {
+          text-transform: none;
+          color: $primary;
+          font-size: 1.7rem;
+          font-weight: normal;
+          cursor: pointer;
+        }
+
+        .wpcf7-form-control-wrap {
+          margin-bottom: 1rem;
+          width: 100%;
+        }
+
+        &-flex-row {
+          @include media-breakpoint-down(lg) {
+            flex-direction: column;
+          }
+
+          p {
+            margin-bottom: 0;
+          }
+        }
+
+        &-selector {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+
+          @include media-breakpoint-up(lg) {
+            flex-direction: row;
+          }
+
+          .wpcf7-form-control-wrap {
+            @include media-breakpoint-up(lg) {
+              margin-left: 1rem;
+              min-width: 90px;
+              width: auto;
+              display: inline-block;
+
+              &:first-child {
+                margin-left: 0;
+              }
+
+              &:nth-child(even) {
+                width: 130px;
+                max-width: 130px;
+              }
+
+              &:last-child {
+                width: 110px;
+                max-width: 110px;
+              }
+            }
+
+            select {
+              padding-right: 3rem;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .btn-container {
+        & > .ajax-loader {
+          position: relative;
+          right: 49px;
+          top: 13px;
+        }
+      }
+    }
+  }
+}

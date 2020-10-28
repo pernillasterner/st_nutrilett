@@ -1,0 +1,251 @@
+$section-space: 80px;
+
+.section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  @include media-breakpoint-up(md) {
+    padding-top: $section-space;
+    padding-bottom: $section-space;
+  }
+
+  &.is-small {
+    @include media-breakpoint-up(md) {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+  }
+
+  &.is-small-top {
+    @include media-breakpoint-up(md) {
+      padding-top: 70px;
+    }
+  }
+
+  &.is-small-bottom {
+    @include media-breakpoint-up(md) {
+      padding-bottom: 70px;
+    }
+  }
+
+  &.bg-white {
+    background-color: $white;
+  }
+
+  &.bg-white-xs {
+    @include media-breakpoint-down(xs) {
+      background-color: $white;
+    }
+  }
+
+  &.bg-primary {
+    background-color: $primary;
+  }
+
+  &.bg-primary-xs {
+    @include media-breakpoint-down(xs) {
+      background-color: $primary;
+    }
+  }
+
+  &.bg-secondary {
+    background-color: $secondary;
+  }
+
+  &.bg-secondary-xs {
+    @include media-breakpoint-down(xs) {
+      background-color: $secondary;
+    }
+  }
+
+  //default
+  &.has-default {
+    padding-top: 112px;
+
+    @include media-breakpoint-up(md) {
+      padding-top: 170px;
+    }
+  }
+
+  //hero
+  &.has-hero {
+    padding-top: 120px;
+
+    @include media-breakpoint-up(md) {
+      padding-top: 150px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding-top: 208px;
+    }
+  }
+
+  //hero
+  &.has-breadcrumbs {
+    padding-top: 178px;
+
+    @include media-breakpoint-up(lg) {
+      padding-top: 290px;
+    }
+
+    &.has-image {
+      padding-top: 140px;
+
+      @include media-breakpoint-up(lg) {
+        padding-top: 175px;
+      }
+    }
+  }
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.bg-white-xs {
+  @include media-breakpoint-down(xs) {
+    background-color: $white;
+  }
+}
+
+.bg-primary {
+  background-color: $primary;
+}
+
+.bg-primary-xs {
+  @include media-breakpoint-down(xs) {
+    background-color: $primary;
+  }
+}
+
+.bg-secondary {
+  background-color: $secondary;
+}
+
+.bg-secondary-xs {
+  @include media-breakpoint-down(xs) {
+    background-color: $secondary;
+  }
+}
+
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+   > .col,
+   > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.title-header {
+  margin-bottom: 30px;
+  max-width: 100%;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 40px;
+  }
+
+  .h2,
+  .h4 {
+    margin-bottom: 0;
+  }
+
+  .is-small-mob {
+    @include media-breakpoint-down(sm) {
+      font-size: 2.2rem;
+    }
+  }
+
+  .title {
+    max-width: 100%;
+  }
+
+  &.has-link {
+    .title {
+      max-width: 70%;
+
+      @include media-breakpoint-up(sm) {
+        min-width: 25%;
+      }
+    }
+  }
+
+  .link-block {
+    line-height: normal;
+    text-align: right;
+    min-width: 30%;
+
+    @include media-breakpoint-up(sm) {
+      min-width: 25%;
+    }
+  }
+
+  &.has-info {
+    .title {
+      .h2 {
+        @include media-breakpoint-up(md) {
+          margin-bottom: 30px;
+        }
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    .link-block {
+      @include media-breakpoint-up(md) {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.show-mobile {
+  @include media-breakpoint-up(md) {
+    display: none !important;
+  }
+}
+
+.hide-mobile {
+  @include media-breakpoint-down(sm) {
+    display: none !important;
+  }
+}
+
+.show-tablet {
+  @include media-breakpoint-up(lg) {
+    display: none !important;
+  }
+}
+
+.hide-tablet {
+  @include media-breakpoint-down(md) {
+    display: none !important;
+  }
+}
+
+div.wpcf7-response-output {
+  font-weight: 500;
+}
+
+div.wpcf7-mail-sent-ok {
+  border: 2px solid #24422b;
+}
+
+.ie-below {
+  background: #000;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: #FFF;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 1040;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

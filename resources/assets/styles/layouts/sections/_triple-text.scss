@@ -1,0 +1,45 @@
+.section-triple-text {
+  .triple-item {
+    @include media-breakpoint-down(md) {
+      margin-bottom: 30px;
+    }
+
+    a {
+      &:hover {
+        @include media-breakpoint-up(md) {
+          color: color("green-mid");
+        }
+      }
+    }
+  }
+
+  .title {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    small {
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+  }
+
+  .h1 {
+    font-weight: 100;
+  }
+
+  .subtitle {
+    margin: 10px 0;
+    display: block;
+    color: color("text-color");
+    opacity: 0.6;
+  }
+
+  .mail {
+    text-decoration: underline;
+    color: color("text-color");
+  }
+
+  .description {
+    font-weight: 500;
+  }
+}

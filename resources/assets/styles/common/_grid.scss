@@ -1,0 +1,32 @@
+.no-pad-mob {
+  @include media-breakpoint-down(xs) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.container,
+[class*="col-"],
+.container-fluid {
+  @include media-breakpoint-up(xxl) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.row {
+  @include media-breakpoint-up(xxl) {
+    margin-left: -25px;
+    margin-right: -25px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+}
